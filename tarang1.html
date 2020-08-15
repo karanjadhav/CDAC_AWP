@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html> 
+<style> 
+      
+    form { 
+        border: 3px solid #f1f1f1; 
+    }
+      
+    input[type=text], 
+    input[type=password] { 
+        width: 100%; 
+        padding: 12px 20px; 
+        margin: 8px 0; 
+        display: inline-block; 
+        border: 1px solid #ccc; 
+        box-sizing: border-box; 
+    } 
+      
+    button { 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px 0; 
+        border: none; 
+        cursor: pointer; 
+        width: 100%; 
+    } 
+      
+    button:hover { 
+        opacity: 0.8; 
+    } 
+   
+      
+    .imgcontainer { 
+        text-align: center; 
+        margin: 24px 0 12px 0; 
+    }
+      
+    img.avatar { 
+        width: 10%; 
+        border-radius: 20%; 
+    }
+      
+    .container { 
+        padding: 16px; 
+    }
+      
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    } 
+      
+    @media screen and (max-width: 300px) { 
+        span.psw { 
+            display: block; 
+            float: none; 
+        } 
+        .cancelbtn { 
+            width: 100%; 
+        } 
+    } 
+</style> 
+  
+<body style="background-image: url(https://img.wallpapersafari.com/desktop/1680/1050/78/35/YprdNg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+">  
+    
+    <div style="width: 30%;
+    margin-top: auto;
+    margin: auto;
+    justify-content: center;
+    background-color: ghostwhite;
+    " >
+      <h2>Login</h2>
+    <form action="/action_page.php"> 
+      <div>
+        <div class="imgcontainer"> 
+            <img src= 
+"https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y" 
+                 alt="Avatar" class="avatar"> 
+        </div> 
+  
+        <div class="container"> 
+            <label><b>Username</b></label> 
+            <input type="text" placeholder="Enter Username" name="uname" required maxlength="13" minlength="3"> 
+  
+            <label><b>Password</b></label> 
+            <input type="password" placeholder="Enter Password" name="psw" required maxlength="12" minlength="5"> 
+  
+            <button type="submit">Login</button> 
+            <input type="checkbox" checked="checked"> Remember me 
+        </div> 
+  
+        <div class="container" style="background-color:#f1f1f1">         
+        </div> 
+      </div>
+    </form>
+  </div>
+  
+</body> 
+  
+</html> 
