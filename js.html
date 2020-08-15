@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btns{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .btns button{
+            padding: 8px 20px;
+            font-size: 15px;
+        }
+        #comment-section{
+            margin-top: 5%;
+            border: 1px solid black;
+            height: 500px;
+            padding: 10px;
+        }
+        .comm{
+            display: flex;
+            justify-content: space-between;
+            padding:0 10px 5px 10px;
+            background-color: #f0f4ff;
+            align-items: center;
+            margin-bottom: 2px;
+            visibility: hidden;
+        }
+        input[type = "text"]{
+            padding: 10px 10px;
+            margin-top: 5%;
+            width: 25em;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section class="main-body">
+        <div>
+            <h1>New Post</h1>
+        </div>
+
+        <div class="btns">
+            <button id="like" onclick="increaseLikeCount()">Like <span id="likeCount">1</span></button>
+            <button id="cmnt" onclick="addComment()">Comment</button>
+        </div>
+
+        <div>
+            <input id="textfield" type="text" placeholder="Comment something..." />
+        </div>
+
+        <div id="comment-section">
+            <div id="comm" class="comm">
+                <p>My comment</p>
+                <button onclick="this.parentElement.remove()">DELETE</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    var likeCount = parseInt(document.getElementById('likeCount').innerHTML);
+    var likebtn = document.getElementById('like');
+    var cmmtbtn = document.getElementById('cmnt');
+    function increaseLikeCount(){
+        likeCount += 1;
+        likebtn.innerHTML = 'Likes '+ likeCount;
+    }
+    function addComment(){
+        var newElement = document.getElementById('comm').cloneNode(true);
+        newElement.removeAttribute('id');
+
+        newElement.style.visibility = 'visible';
+
+        var userComment = document.getElementById('textfield');
+
+        newElement.children[0].innerText = userComment.value;
+
+        var commentBox = document.getElementById('comment-section');
+
+        commentBox.insertBefore(newElement, commentBox.firstChild);
+        userComment.value = "";
+    }
+</script>
+</html>
